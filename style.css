@@ -147,3 +147,41 @@ button {
 
   background: #A45A49;
 }
+
+.receitas {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1120px;
+  padding: 3rem 2rem;
+  margin: auto;
+}
+
+.receitas-cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+}
+
+.receitas-title {
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFF2E7;
+}
+
+.receitas-subtitle {
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  color: #C7BAB3;
+}
+
+.receitas-card-container {
+  padding: 0rem 10rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
