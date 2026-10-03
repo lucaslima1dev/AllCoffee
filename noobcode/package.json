@@ -63,9 +63,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "NoobCode",
-      "installerLanguages": ["PortugueseBR", "English"],
-      "language": "1046"
+      "shortcutName": "NoobCode"
     },
     "portable": {
       "artifactName": "NoobCode-Portable-${version}.${ext}"
