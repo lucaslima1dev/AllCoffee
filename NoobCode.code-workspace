@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "NoobCode",
+      "path": "noobcode"
+    },
+    {
+      "name": "Repo",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/dist-electron": true,
+      "**/release": true
+    }
+  }
+}
