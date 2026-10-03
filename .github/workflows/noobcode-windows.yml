@@ -1,0 +1,48 @@
+name: Build NoobCode Windows
+
+on:
+  push:
+    branches:
+      - master
+      - cursor/**
+    paths:
+      - "noobcode/**"
+      - ".github/workflows/noobcode-windows.yml"
+  pull_request:
+    paths:
+      - "noobcode/**"
+      - ".github/workflows/noobcode-windows.yml"
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: noobcode
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: noobcode/package-lock.json
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build Windows installer
+        run: npm run electron:build:win
+
+      - name: Upload .exe artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: NoobCode-Windows
+          path: |
+            noobcode/release/*.exe
+          if-no-files-found: error
+          retention-days: 14

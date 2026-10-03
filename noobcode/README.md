@@ -53,11 +53,30 @@ npm run electron:dev
 
 ## Build Windows
 
+O app roda **local no seu PC** (não depende de servidor na nuvem para o agent).  
+Ollama também fica local.
+
+### Gerar `.exe` no seu Windows
+
 ```bash
-npm run electron:build
+cd noobcode
+npm install
+npm run electron:build:win
 ```
 
-O instalador sai em `noobcode/release/`.
+Saída em `noobcode/release/`:
+- `NoobCode-Setup-0.1.0-x64.exe` → instalador
+- `NoobCode-Portable-0.1.0.exe` → versão portátil (sem instalar)
+
+### Pelo GitHub Actions
+
+Em todo push/PR que mexer em `noobcode/`, o workflow **Build NoobCode Windows** gera os `.exe`.
+
+1. Abra a Actions do repo
+2. Entre no workflow **Build NoobCode Windows**
+3. Baixe o artifact **NoobCode-Windows**
+
+Ainda precisa ter o **Ollama** instalado no PC para o agent pensar.
 
 ## Segurança
 
